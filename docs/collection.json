@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "Social Media Content Analyzer",
+    "_postman_id": "d1f5e9f9-1234-4db9-aaaa-0000example",
+    "description": "API tests for Social Media Content Analyzer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "Upload & Analyze",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": []
+            },
+            {
+              "key": "platform",
+              "type": "text",
+              "value": "generic"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/upload-and-analyze",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "upload-and-analyze"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
